@@ -1,0 +1,256 @@
+<?php 
+if(isset($_POST['submit'])){
+    $to = "email@example.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<title>Belt Technologies</title>
+	<meta content="" name="description">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+	<link href="apple-touch-icon.png" rel="apple-touch-icon">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/fontAwesome.css" rel="stylesheet">
+	<link href="css/tooplate-style.css" rel="stylesheet">
+	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js">
+	</script>
+</head>
+<body>
+	<section class="first-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text-content">
+						<h2>Belt Technologies - Your Financial Utility Belt</h2>
+						<div class="line-dec"></div><span>Enterprise gateway to the world of blockchain and cryptoassets</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="second-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="service-item">
+						<div class="icon"><img alt="" src="img/icon-value_1.png"></div>
+						<h4>Efficiency</h4>
+						<p>We care about uniting the diverse and disparate array of blockchain/cryptoasset solutions out there in one.</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="service-item">
+						<div class="icon"><img alt="" src="img/icon-value_2.png"></div>
+						<h4>Utility</h4>
+						<p>We care about enabling you to to achieve a smarter way of life, one that is better integrated with the Industry 4.0.</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="service-item">
+						<div class="icon"><img alt="" src="img/icon-value_3.png"></div>
+						<h4>Accessibility</h4>
+						<p>We care about not making the user think about the way they interface with this emerging and exponential technology.</p>
+					</div>
+				</div><!--
+              <div class="col-md-3 col-sm-6">
+                <div class="service-item">
+                  <div class="icon">
+                    <img src="img/fourth-icon.png" alt="">
+                  </div>
+                  <h4>Voice Chat</h4>
+                  <p>Sed pulvinar ipsum id leo volutpat, in convallis lectus molestie. Aliquam nisi sapien, faucibus eu consequat id, egestas vitae augue.</p>
+                </div>
+              </div>
+-->
+			</div>
+		</div>
+	</section>
+	<section class="third-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="left-image col-md-4"><img alt="" src="img/image-1.png"></div>
+					<div class="right-text col-md-8">
+						<h4><em>Our Manifesto</em><br>
+						Our Belif System</h4>
+						<p>Blockchain and Cryptoassets have recently become a booming industry with billions of dollars generated from ICOs and the like. This emerging but exponential technology is the latest entry in the grand scheme of the 4th Industrial Revolution. It’s an industry rife with many controversies as well as the potential to create huge impact. It’s the first time a technology has been recognized by global organizations such as the United Nations and their subsidiaries such as UNICEF, World Economic Forum, and governments & banks all over the world as having the power to enable sweeping changes throughout the world. From combatting climate change to ending poverty, blockchain and cryptoassets are two technologies that will inevitably become a mainstay of our 21st Century lives.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--
+        <section class="fourth-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item first-item">
+                  <div class="image">
+                    <a href="img/01-big-item.jpg" data-lightbox="image-1"><img src="img/first-item.jpg"></a>
+                  </div>
+                  <div class="text">
+                    <span>Tian-Yuan Zhao</span>
+                    <h4>CEO and Product Designer</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item second-item">
+                  <div class="image">
+                    <a href="img/02-big-item.jpg" data-lightbox="image-1"><img src="img/second-item.jpg"></a>
+                  </div>
+                  <div class="text">
+                    <span>Architect</span>
+                    <h4>Rock Solid</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item third-item">
+                  <div class="image">
+                    <a href="img/03-big-item.jpg" data-lightbox="image-1"><img src="img/third-item.jpg"></a>
+                  </div>
+                  <div class="text">
+                    <span>Focus</span>
+                    <h4>Clean Design</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="send-to-portfolio">
+                  <span>Do you want to see more?</span>
+                  <div class="primary-button">
+                    <a href="portfolio-page.html">Visit gallery</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+-->
+	<section class="fivth-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="left-text col-md-8">
+						<h4><em>Our Product</em><br>
+						Our Solution</h4>
+						<p>Belt is a B2B enterprise SaaS that aims to provide employees with a way to be paid in a configurable amount of cryptoassets as well as a portal to access blockchain-based insurance solutions. Human beings spend roughly 1/4th (conservative estimate) of their entire waking lives working. Despite the future of work being expected to be more remotely operated, distributed, and may operate in a 4-day work week, our work lives are still an inescapable part of our daily lives. When it comes to the basics of work, 2 things hold true at least for the next 5 to 10 years  —  financial compensation and insurance.</p>
+					</div>
+					<div class="right-image col-md-4"><img alt="" src="img/image-2.png"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="sixth-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<form action="/Belt_newsletter.php" id="contact" method="post" name="contact">
+							<div class="col-md-6">
+								<fieldset>
+									<input class="form-control" id="name" name="name" placeholder="Your name..." required="required" type="text">
+								</fieldset>
+							</div>
+							<div class="col-md-6">
+								<fieldset>
+									<input class="form-control" id="email" name="email" placeholder="Your email..." required="required" type="email">
+								</fieldset>
+							</div>
+							<div class="col-md-12">
+								<fieldset>
+									<textarea class="form-control" id="message" name="message" placeholder="Your message..." required="required" rows="6"></textarea>
+								</fieldset>
+							</div>
+							<div class="col-md-12">
+								<fieldset>
+									<button class="btn" id="form-submit" type="submit" value="Submit">Submit</button>
+								</fieldset>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="right-info">
+						<ul>
+							<li>
+								<a href="#"><i class="fa fa-envelope"></i>tianyuan.zhao@utoronto.ca</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-phone"></i>+1 (647) 716 - 3730</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-map-marker"></i>LPH03, 1910 Lakeshore Blvd West</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul>
+						<li>
+							<a href=""https://medium.com/usebelt target="_blank"><i class="fa fa-medium"></i></a>
+						</li>
+<!--
+						<li>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-linkedin"></i></a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-rss"></i></a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+						</li>
+-->
+					</ul>
+					<p>Copyright &copy; 2017 <b>Belt Technologies</b> | Design: <b><a href="https://www.linkedin.com/in/tntyzhao/" target="_blank">Tian-Yuan Zhao</a></b></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+	</script> 
+	<script>
+	window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+	</script> 
+	<script src="js/vendor/bootstrap.min.js">
+	</script> 
+	<script src="js/plugins.js">
+	</script> 
+	<script src="js/main.js">
+	</script>
+</body>
+</html>
